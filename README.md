@@ -1,5 +1,6 @@
 # system-setup
-
+Model: Lenovo Thinkpad
+OS: Ubuntu 25
 
 ThinkPad:
 1. Change terminal settings.
