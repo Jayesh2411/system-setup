@@ -4,16 +4,18 @@
 ThinkPad:
 1. Change terminal settings.
 2. Change shell to zsh
+   ```
     sudo apt update
     sudo apt install zsh -y
     chsh -s $(which zsh)
     sudo apt install build-essentials 
     sudo apt install git
     sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-
+    ```
 2. Java 17
-     sudo apt install openjdk-17-jdk -y\n
+    ``` sudo apt install openjdk-17-jdk -y\n ```
 3. Node 20
+     ```
     sudo apt install -y ca-certificates curl gnupg\n
     sudo mkdir -p /etc/apt/keyrings\ncurl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg\n
 
@@ -22,8 +24,9 @@ ThinkPad:
     sudo apt update\nsudo apt install -y nodejs\n
 
     node -v
-
-4. Docker
+    ```
+5. Docker
+    ```
     sudo apt install -y ca-certificates curl gnupg lsb-release
     
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker.gpg
@@ -36,35 +39,39 @@ ThinkPad:
     
     sudo docker --version
 
-    Start Docker
+    #Start Docker
         sudo dockerd
-    Stop Docker
+    #Stop Docker
         docker stop $(docker ps -q)
         sudo systemctl stop docker
         docker system prune -a -f
-5. Install Vscode and intelliJ
+    ```
+7. Install Vscode and intelliJ
 
-6. Autosugestions
+8. Autosugestions
+    ```
     sudo apt install zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     plugins=( ... zsh-autosuggestions)
-
-7. Brew
+    ```
+10. Brew
+    ```
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     
     echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bash_profile
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-8. Github SSH
-    
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    ```
+12. Github SSH
+    ```
     ssh-keygen -t ed25519 -C "jsinha2411@gmail.com"
     Add in github
     
     git config --global user.email "jsinha2411@gmail.com"
     git config --global user.name "Jayesh Sinha"
+    ```
 
-
-9. Aliases Add in .zshrc
+13. Aliases Add in .zshrc
+    ```
     alias update='sudo apt update && sudo apt upgrade'  # Update system packages
     alias brewup='brew update && brew upgrade'         # Update Homebrew and packages
     alias brewinst='brew install'                      # Install a package via Homebrew
@@ -95,5 +102,5 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     alias pingg='ping -c 5'                   # Ping a host 5 times
     alias dusage='df -h'                      # Show disk usage in human-readable format
     alias speed='speedtest-cli'               # Test internet speed
-    
+    ```
 
